@@ -1,0 +1,31 @@
+/* 
+    Document   : zone
+    Created on : 17 November 2003, 05:21
+    Author     : E56449
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+BODY {
+  background-image: url("slackground.JPG");
+  background-repeat: repeat-y;   
+  background-attachment: fixed;   
+  background-position: left top;  
+  font-family: Verdana, Arial, Helvetica, sans-serif;   
+  font-size: 8pt;
+  font-style: normal;   
+  line-height: normal;   
+  font-weight: normal;   
+  color: black;   
+  text-decoration: none;   
+  background-color: #5090d0; 
+}
+
+TD {
+  font-family: Verdana, Arial, Helvetica, sans-serif;   
+  font-size: 8pt;
+}

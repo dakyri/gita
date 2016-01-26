@@ -1,0 +1,160 @@
+/*
+ * PageData.java
+ *
+ * Created on 17 February 2004, 01:12
+ */
+package gita;
+ 
+import zone.HTMLwriter;
+import zone.Rectangle;
+import java.io.File;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Collection;
+
+/**
+ * Primary internal form of a page of raw stroke data. This is basically a LinkedList of Stroke structures
+ * a linked list of StrokeGroup structures, plus a few fields holding the additional page based data
+ * that the Anoto system generates e.g. pen color, page id, pen id.
+ * <p>
+ * StrokeGroup information is only provided from SVG+XML input data. This is mainly used at the moment to
+ * distinguish groups of strokes that are used for signatures, or for signature training. Such data is
+ * processed by slightly different parts of the system to regular stroke data. In more complete
+ * versions of the system, the StrokeGroup information could be used to tag input strokes with subsidiary
+ * information, such as the results of prior analyses.
+ * <p>
+ * Analytical results by the the system regarding strokes are represented in Symbol structures, and
+ * related classes and subclasses. 
+ *
+ * @see Stroke
+ * @see Symbol
+ * @see SymbolList
+ * @see SymbolValue
+ * @see StrokeGroup
+ * @see LinkedList
+ * @see ArrayList
+ *
+ * @author  dak
+ * @since you asked
+ */
+public class PageData {
+    
+    /**
+     * creates a new instance of a PageData structure
+     */
+    public PageData()
+    {
+        bounds = new Rectangle(0,0,100,100);
+        nStroke = 0;
+        strokes = new LinkedList();
+        groups = new LinkedList();
+    }
+    
+    /**
+     * creates a new instance of a PageData structure
+     */
+    public PageData(LinkedList<Stroke> s, LinkedList<StrokeGroup> g)
+    {
+        bounds = new Rectangle(0,0,100,100);
+        nStroke = s.size();
+        strokes = s;
+        groups = g;
+    }
+    
+    public void AnalyseStrokes(HTMLwriter http) throws Cow
+    {
+ /*
+  * calculate features for grouped strokes
+  * the procedure is potentially different for strokes in different groups
+  */
+        for (StrokeGroup g: groups) {
+            g.CalculateFeatures(http);
+        }
+/*
+ * calculate features for all the ungrouped strokes
+ */
+        for (Stroke s: strokes) {
+            if (s.group == null) {
+                s.CalculateFeatures(http);
+            }
+        }
+    }
+    
+    /**
+     * adds a stroke to the list of strokes for this page, makeing appropriate adjustments
+     * @param s a Stroke
+     * @return true if the stroke was actually added
+     */
+    public boolean add(Stroke s)
+    {
+        if (strokes.add(s)) {
+            nStroke++;
+            return true;
+        }
+        return false;
+    }
+    
+    /**
+     * adds a stroke to the list of strokes for this page, making appropriate adjustments
+     * @param sl a Collection<Stroke> to add
+     * @return true if the stroke was actually added
+     */
+    public boolean add(Collection<Stroke> sl)
+    {
+        boolean aded=false;
+        for (Stroke s: sl) {
+            if (strokes.add(s)) {
+                aded = true;
+            }
+        }
+        return aded;
+    }
+    
+    /**
+     * Sets up basic structures for the page, once all the Strokes and StrokeGroups have been
+     * assigned and allocated.
+     * calls Stroke.CalculateBounds() to calculate basic mean, bounds, and centroid for each stroke, if not
+     * done so already
+     *
+     * @param http HTMLwriter for diagnostic output
+     * @see HTMLwriter
+     * @see Stroke
+     */
+    public void SetupStructures(HTMLwriter http)
+    {
+        for (Stroke s: strokes) {
+            if (s.bounds == null) {
+                s.CalculateBounds();
+            }
+        }
+
+/* 
+ * populate any uncompleted group structures
+ */
+        for (Stroke s: strokes) {
+            if (s.group != null) { // gather together training data
+                switch (s.group.type) {
+                    case SignatureTraining: {
+                        s.group.AppendEnclosedStrokes(s, strokes);
+                        break;
+                    }
+                    case Signature: {
+                        s.group.AppendEnclosedStrokes(s, strokes);
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    /** number of raw strokes within the page. Hopefully this is the same as strokes.length */
+    int                      nStroke = 0;
+    /** list of strokes that are on this page */
+    LinkedList<Stroke>       strokes = null;
+    /** string of basic info about this page */
+    String                   info = null;
+    /** the bounds of the page i.e. the smallest and largest stroke co-ordinates in the x and y directions */
+    Rectangle                bounds = null;
+    /** a list of all the groupings and subgroupings of strokes within a page */
+    LinkedList<StrokeGroup>  groups = null;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<!DOCTYPE grammar PUBLIC "-//GITA//DTD GRAMMAR 1.0//EN"
+   "grammar.dtd">
+<grammar>
+    <rule target="date">
+        <number/>
+        <mark char="/"/>
+        <number/>
+        <mark char="/"/>
+        <number/>
+    </rule>
+    <rule target="time">
+        <number/>
+        <mark char=":"/>
+        <number/>
+    </rule>
+</grammar>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<svg width="179.474" height="400.0">
+<title>transforms graphed</title>
+<g>
+<path id="equalised real" style="fill:none;stroke:#227722;stroke-width:2.0;" d="M0.0 11.740261 11.217125 37.827103 22.43425 68.87279 33.651375 20.377338 44.8685 59.353382 56.085625 17.887133 67.30275 62.951706 78.519875 11.860434 89.737 70.0 100.954124 11.86043 112.17125 62.951706 123.388374 17.887135 134.6055 59.353382 145.82263 20.37734 157.03975 68.87279 168.25687 37.8271" />
+<text x="0.0" y="11.740261" font-family="Verdana" font-size="11.5">equalised real</text>
+<path id="equalised real axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 40.0 179.474 40.0" />
+<path id="equalised im" style="fill:none;stroke:#772222;stroke-width:2.0;" d="M0.0 100.0 11.217125 130.0 22.43425 95.92348 33.651375 87.76078 44.8685 108.40642 56.085625 90.66013 67.30275 104.49919 78.519875 99.34851 89.737 100.0 100.954124 100.65149 112.17125 95.50081 123.388374 109.33987 134.6055 91.59358 145.82263 112.23922 157.03975 104.07652 168.25687 70.0" />
+<text x="0.0" y="100.0" font-family="Verdana" font-size="11.5">equalised im</text>
+<path id="equalised im axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 100.0 179.474 100.0" />
+<path id="equalised magnitude" style="fill:none;stroke:#227722;stroke-width:2.0;" d="M0.0 174.12987 11.217125 188.33992 22.43425 189.12697 33.651375 182.75833 44.8685 180.91043 56.085625 183.79846 67.30275 183.33965 78.519875 188.14626 89.737 190.0 100.954124 188.14626 112.17125 183.33965 123.388374 183.79846 134.6055 180.91043 145.82263 182.75833 157.03975 189.12697 168.25687 188.33992" />
+<text x="0.0" y="174.12987" font-family="Verdana" font-size="11.5">equalised magnitude</text>
+<path id="equalised magnitude axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 160.0 179.474 160.0" />
+<path id="equalised phase" style="fill:none;stroke:#772222;stroke-width:2.0;" d="M0.0 220.0 11.217125 204.15717 22.43425 221.27132 33.651375 245.10199 44.8685 216.26567 56.085625 246.56874 67.30275 218.24431 78.519875 250.0 89.737 220.0 100.954124 190.0 112.17125 221.75569 123.388374 193.43126 134.6055 223.73433 145.82263 194.89803 157.03975 218.72868 168.25687 235.84285" />
+<text x="0.0" y="220.0" font-family="Verdana" font-size="11.5">equalised phase</text>
+<path id="equalised phase axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 220.0 179.474 220.0" />
+<path id="equalised theta" style="fill:none;stroke:#222277;stroke-width:2.0;" d="M0.0 280.0 11.217125 280.0 22.43425 277.73438 33.651375 275.19217 44.8685 270.79388 56.085625 275.69443 67.30275 271.2096 78.519875 259.3484 89.737 266.53827 100.954124 275.86734 112.17125 278.50186 123.388374 274.36377 134.6055 280.0 145.82263 277.9663 157.03975 310.0 168.25687 272.37433 179.474 277.8783 190.69113 279.99847" />
+<text x="0.0" y="280.0" font-family="Verdana" font-size="11.5">equalised theta</text>
+<path id="equalised theta axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 280.0 201.90825 280.0" />
+<path id="rawish theta" style="fill:none;stroke:#772277;stroke-width:2.0;" d="M0.0 340.0 11.217125 340.0 22.43425 335.98724 33.651375 330.09714 44.8685 327.814 56.085625 324.20764 67.30275 329.7577 78.519875 334.4994 89.737 336.82712 100.954124 370.0 112.17125 327.2196" />
+<text x="0.0" y="340.0" font-family="Verdana" font-size="11.5">rawish theta</text>
+<path id="rawish theta axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 340.0 123.388374 340.0" />
+<path id="straightened theta" style="fill:none;stroke:#227777;stroke-width:2.0;" d="M0.0 400.0 11.217125 400.0 22.43425 395.66708 33.651375 389.30698 44.8685 386.8417 56.085625 382.94757 67.30275 388.94046 78.519875 393.0281 89.737 430.0 100.954124 386.19986" />
+<text x="0.0" y="400.0" font-family="Verdana" font-size="11.5">straightened theta</text>
+<path id="straightened theta axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 400.0 112.17125 400.0" />
+<path id="straightened real" style="fill:none;stroke:#227722;stroke-width:2.0;" d="M0.0 449.4559 11.217125 488.3785 22.43425 470.43414 33.651375 462.80252 44.8685 463.35825 56.085625 449.70877 67.30275 475.67468 78.519875 452.41016 89.737 471.1934 100.954124 446.59137 112.17125 461.45248 123.388374 453.79004 134.6055 471.08377 145.82263 442.55453 157.03975 471.11148 168.25687 430.0" />
+<text x="0.0" y="449.4559" font-family="Verdana" font-size="11.5">straightened real</text>
+<path id="straightened real axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 460.0 179.474 460.0" />
+<path id="straightened im" style="fill:none;stroke:#772222;stroke-width:2.0;" d="M0.0 550.0 11.217125 514.8147 22.43425 524.66364 33.651375 511.82004 44.8685 518.97034 56.085625 522.2837 67.30275 516.79395 78.519875 522.8313 89.737 511.2582 100.954124 523.05164 112.17125 515.27234 123.388374 525.4423 134.6055 516.1273 145.82263 515.9593 157.03975 526.0423 168.25687 504.6689" />
+<text x="0.0" y="550.0" font-family="Verdana" font-size="11.5">straightened im</text>
+<path id="straightened im axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 520.0 179.474 520.0" />
+<path id="straightened magnitude" style="fill:none;stroke:#227722;stroke-width:2.0;" d="M0.0 601.6736 11.217125 600.8092 22.43425 589.7625 33.651375 591.8111 44.8685 582.7298 56.085625 587.76886 67.30275 591.67566 78.519875 586.58344 89.737 594.6283 100.954124 590.1681 112.17125 586.8086 123.388374 588.84534 134.6055 589.38995 145.82263 593.27246 157.03975 591.49445 168.25687 610.0" />
+<text x="0.0" y="601.6736" font-family="Verdana" font-size="11.5">straightened magnitude</text>
+<path id="straightened magnitude axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 580.0 179.474 580.0" />
+<path id="straightened phase" style="fill:none;stroke:#772222;stroke-width:2.0;" d="M0.0 640.0 11.217125 644.0183 22.43425 631.7118 33.651375 655.5832 44.8685 646.2817 56.085625 610.0 67.30275 644.4504 78.519875 612.5175 89.737 651.2783 100.954124 610.10736 112.17125 655.76715 123.388374 617.0484 134.6055 646.95404 145.82263 669.8171 157.03975 630.6283 168.25687 665.7551" />
+<text x="0.0" y="640.0" font-family="Verdana" font-size="11.5">straightened phase</text>
+<path id="straightened phase axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 640.0 179.474 640.0" />
+<path id="stroke_3" style="fill:none;stroke:#000000;stroke-width:2;" d="M34.5 700.15 33.074005 700.0 31.723999 700.224 30.074005 702.024 30.147995 703.0 31.274002 703.524 33.600006 702.926 36.447998 700.60004 36.974 701.874 39.224 702.624" />
+</g></svg>

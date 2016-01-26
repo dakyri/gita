@@ -1,0 +1,256 @@
+/*
+ * AnotoLogParser.java
+ *
+ * Created on 2 September 2004, 08:29
+ */
+package gita;
+ 
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import java.util.LinkedList;
+import zone.HTMLwriter;
+import zone.Rectangle;
+ 
+/**
+ * A processor for Anoto log file data. Anoto log file data is in a simple ascii format, specified in
+ * the documentation for the Anoto demo kit.
+ *<p>
+ * Anoto log data, actually all anoto dat, is transmitted when the bottom right hand check box is marked.
+ * This is a 10mm x10mm region offset apprx 5mm from bottom rh corner of page.
+ * These coordinates co-ordinates used are for the demo sheet 44.0.3.8
+ * currently we simply ignore these strokes... perhaps we could make
+ * better use of these marks... ie. have single stroke command chars
+ * or such...
+ *<p>
+ * The form of Anoto log data is a freely formatted ascii text file:
+ *<ul>
+ *   <li>    pen id, ...  16 chars.
+ *   <li>    paper id ...  number.number.number.number
+ *   <li>    color ... 3 numbers 1 byte
+ *   <li>    total number of strokes ... integer
+ *   <li>    total number of samples ... integer 
+ *   <li>    (number of samples (x sample y sample)*)* ... integer float float 
+ *</ul>
+ *
+ * @author  dak
+ * @since you asked
+ */
+public class AnotoLogParser
+{
+    /**
+     * create an instance of an AnotoLogParser
+     */
+    AnotoLogParser()
+    {
+        rgbColor = new int[3];
+        penId = null;
+        paperId = null;
+        anotoTransmitBox = new Rectangle(385,560,405,580);
+        p = Pattern.compile("\\s\\s*|([0-9a-f]{16})|(\\d\\d*\\.\\d\\d*\\.\\d\\d*\\.\\d\\d*)|(-?\\d\\d*\\.\\d\\d*|-?\\.\\d\\d*)|(\\d\\d*)");
+    }
+
+    /**
+     * Crude scanner for the AnotoLogParser.
+     *
+     * @return an int giving the type of the scanned token. =1 for a pen-id, =2 for a paper-id, =3 for a real number, =4 for an int number
+     */
+    int scanTok()
+    {
+        token = null;
+        tokenType = 0;
+        while (m.find()) {
+            for (short i=1; i<=m.groupCount(); i++) {
+              if (m.group(i) != null) {
+
+                  switch (i) {
+                      case 1: { // pen id
+                          tokenType = 1;
+                          token = m.group(1);
+                          return tokenType;
+                      }
+                      case 2: { // paper id
+                          tokenType = 2;
+                          token = m.group(2);
+                          return tokenType;
+                      }
+
+                      case 3: { // number
+                          tokenType = 3;
+                          token = m.group(3);
+                          return tokenType;
+                      }
+
+                      case 4: { // number
+                          tokenType = 4;
+                          token = m.group(4);
+                          return tokenType;
+                      }
+                  }
+               }
+            }
+        }
+        return 0;
+    }
+
+    /**
+     * Parse the anoto log data passed in the given string. Diagnostic output is sent to the
+     * html page attached to the given HTMLwriter.
+     *
+     * @param logData a String containing the log data
+     * @param http HTMLwriter for diagnostic output
+     * @return a PageData structure holding all the stroke data
+     * @see HTMLwriter
+     * @see PageData
+     */
+    PageData parseLogData(String logData, HTMLwriter http)
+    throws LogParseException
+    {
+        http.printbr("Parsing log data...");
+        PageData page = new PageData();
+
+        float   serverScale = 2;
+
+        float   maxX = 0, minX=0;
+        float   maxY = 0, minY = 100;
+        if (logData != null && logData.length() > 0) {
+
+            http.printbr("Scanning non-absence of data, length "+logData.length()+"...");
+            penId = null;
+            paperId = null;
+            rgbColor[0] = rgbColor[1] = rgbColor[2] = 0;
+            page.nStroke = 0;
+
+            m = p.matcher(logData);
+
+            try {
+                tokenType = scanTok();
+//                    http.printbr("pid "+token);
+                if (tokenType != 1) {
+                    throw new LogParseException("Expecting a pen");
+                }
+                penId = token;
+
+                tokenType = scanTok();
+//                    http.printbr("papid "+token);
+                if (tokenType != 2) {
+                    throw new LogParseException("Expect paper");
+                }
+                paperId = token;
+
+                page.info = "anoto dump, pen "+penId+", paper "+paperId;
+
+                for (short i=0; i<3; i++) {
+                    tokenType = scanTok();
+//                        http.printbr("rgb "+token);
+                    if (tokenType != 4) {
+                        throw new LogParseException("Expect rgb color");
+                    }
+                    rgbColor[i] = Integer.parseInt(token);
+                }
+
+                tokenType = scanTok();
+//                    http.printbr("nstroke "+token);
+                if (tokenType != 4) {
+                    throw new LogParseException("Expect number of strokes");
+                 }
+
+                int nRecvdStroke = Integer.parseInt(token);
+
+                tokenType = scanTok();
+//                    http.printbr("nsample "+token);
+                if (tokenType != 4) {
+                    throw new LogParseException("Expect number of samples");
+                }
+
+                int     nSample = Integer.parseInt(token);
+                int     nPageStroke = 0;
+
+                for (short i=0; i<nRecvdStroke; i++) {
+                    tokenType = scanTok();
+//                        http.printbr("n stroke sample "+token);
+                    if (tokenType != 4) {
+                        throw new LogParseException("Expect number of stroke samples");
+                    }
+                    boolean filteredStroke = false;
+
+                    int nStrokeSample = Integer.parseInt(token);
+                    Stroke s = new Stroke();
+                    s.SetMax(nStrokeSample);
+                    s.nSample = 0;
+
+                    for (short j=0; j<nStrokeSample; j++) {
+
+                        tokenType = scanTok();
+                        if (tokenType != 3 && tokenType != 4) {
+                            throw new LogParseException("Expect sample at token "+token+", type "+tokenType);
+                        }
+                        float   x = serverScale*Float.parseFloat(token);
+                        tokenType = scanTok();
+                        if (tokenType != 3 && tokenType != 4) {
+                            throw new LogParseException("Expect sample at token "+token+", type "+tokenType);
+                        }
+                        float   y = serverScale*Float.parseFloat(token);
+                        InkSample   sample = new InkSample(x,y);
+
+                        if (anotoTransmitBox.Contains(sample)) {
+                            filteredStroke = true;
+                            break;
+                        }
+
+                        if (x < minX) {
+                            minX = x;
+                        } else if (x > maxX) {
+                            maxX = x;
+                        }
+
+                        if (y < minY) {
+                            minY = y;
+                        } else if (y > maxY) {
+                            maxY = y;
+                        }
+
+                        s.sample[s.nSample] = sample;
+                        s.nSample++;
+                    }
+                    if (!filteredStroke) {
+                        page.add(s);
+                        nPageStroke++;
+                    }
+                }
+
+                page.nStroke = nPageStroke;
+                page.bounds.left = minX;
+                page.bounds.right = maxX;
+                page.bounds.top = minY;
+                page.bounds.bottom = maxY;
+
+            } catch (LogParseException lpe) {
+                http.printbr("parse error: "+lpe.getMessage());
+//                    strokes.nStroke = 0;
+            }
+        } else {
+            http.printbr("Absence of log data... oh hell!");
+        }
+        return page;
+
+    }
+
+    /** Pattern used for parsing words from the received log */
+    Pattern     p;
+    /** Matcher used for parsing words from the received log */
+    Matcher     m;
+    /** The current word being processed from the Anoto log data */
+    String      token;
+    /** The type of word currently being processed from the Anoto log data. =1 for a pen-id, =2 for a paper-id, =3 for a real number, =4 for an int number */
+    int         tokenType;
+
+    /** the id of the anoto pen, as reported by in the received log data */
+    String      penId;
+    /** the id of the anoto paper, as reported by in the received log data */
+    String      paperId;
+    /** the apparent color of the anoto pen, as reported by in the received log data */
+    int         rgbColor[];
+    /** a rectangle giving the co-ordinates of the Anoto transmit box, (385,560,405,580) for page 44.0.3.8 */
+    Rectangle   anotoTransmitBox;
+
+}

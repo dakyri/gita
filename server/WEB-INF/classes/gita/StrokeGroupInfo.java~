@@ -1,0 +1,24 @@
+/*
+ * StrokeGroupInfo.java
+ *
+ * Created on 19 April 2005, 11:47
+ */
+package gita;
+ 
+import zone.HTMLwriter;
+import gita.*;
+/**
+ *
+ * @author dak
+ */
+public abstract class StrokeGroupInfo
+{
+    public StrokeGroupInfo(StrokeGroup g)
+    {
+        group = g;
+    }
+    public abstract void CalculateFeatures(HTMLwriter http) throws Cow;
+    public abstract void DisplayFeatures(HTMLwriter http);
+    
+    StrokeGroup group=null;
+}

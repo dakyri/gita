@@ -1,0 +1,42 @@
+/*
+ * StrokeInfo.java
+ *
+ * Created on 20 April 2005, 14:32
+ */
+package gita;
+ 
+import zone.HTMLwriter;
+
+/**
+ * Basic abstract class for additional information calculated from stroke data, such as complex transforms,
+ * and many bits and pieces of basic geometry. This structure refers back to the Stroke structure which
+ * it is pertinent to. The type of StrokeInfo structure actually created and used is dicated by the
+ * <i>type</i> member of the <i>Stroke</i>, which is of type <i>Stroke.Type</i>
+ *
+ * @see Stroke
+ * @author dak
+ * @since you asked
+ */
+public abstract class StrokeInfo
+{
+     /**
+      * create a new StrokeInfo structure
+      */
+     public StrokeInfo(Stroke s)
+     {
+         stroke = s;
+     }
+     
+     /**
+      * makes any calculations pertinent to this particular StrokeInfo class
+      */
+     public abstract void CalculateFeatures(HTMLwriter http) throws Cow;
+     
+     /**
+      * makes any calculations pertinent to this particular StrokeInfo class
+      */
+     public abstract void DisplayFeatures(HTMLwriter http);
+     
+     /** the Stroke for which this StrokeInfo is created */
+     Stroke     stroke=null;
+}

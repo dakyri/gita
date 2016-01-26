@@ -1,0 +1,849 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+<title>DTD Grammar Documentation</title>
+<meta http-equiv="Content-Type" content="text/xhtml; charset=UTF-8" />
+</head>
+
+<!-- Generated on 2/06/2005 by NetBeans XML module. -->
+<body>
+
+<hr />
+<h2>Element Index</h2>
+<ul><li><tt><a href="#angle">angle</a></tt></li>
+<li><tt><a href="#angleconnect">angleconnect</a></tt></li>
+<li><tt><a href="#arrow">arrow</a></tt></li>
+<li><tt><a href="#below">below</a></tt></li>
+<li><tt><a href="#box">box</a></tt></li>
+<li><tt><a href="#branchpoint">branchpoint</a></tt></li>
+<li><tt><a href="#broken-line">broken-line</a></tt></li>
+<li><tt><a href="#circle">circle</a></tt></li>
+<li><tt><a href="#column">column</a></tt></li>
+<li><tt><a href="#compartment">compartment</a></tt></li>
+<li><tt><a href="#connect">connect</a></tt></li>
+<li><tt><a href="#contains">contains</a></tt></li>
+<li><tt><a href="#convex">convex</a></tt></li>
+<li><tt><a href="#cross">cross</a></tt></li>
+<li><tt><a href="#diamond">diamond</a></tt></li>
+<li><tt><a href="#digit">digit</a></tt></li>
+<li><tt><a href="#dotted-line">dotted-line</a></tt></li>
+<li><tt><a href="#edgeconnect">edgeconnect</a></tt></li>
+<li><tt><a href="#empty">empty</a></tt></li>
+<li><tt><a href="#endpoint">endpoint</a></tt></li>
+<li><tt><a href="#fill">fill</a></tt></li>
+<li><tt><a href="#follow">follow</a></tt></li>
+<li><tt><a href="#grammar">grammar</a></tt></li>
+<li><tt><a href="#group">group</a></tt></li>
+<li><tt><a href="#headconnect">headconnect</a></tt></li>
+<li><tt><a href="#height">height</a></tt></li>
+<li><tt><a href="#horizontal">horizontal</a></tt></li>
+<li><tt><a href="#intersection">intersection</a></tt></li>
+<li><tt><a href="#label">label</a></tt></li>
+<li><tt><a href="#letter">letter</a></tt></li>
+<li><tt><a href="#line">line</a></tt></li>
+<li><tt><a href="#mark">mark</a></tt></li>
+<li><tt><a href="#number">number</a></tt></li>
+<li><tt><a href="#overlay">overlay</a></tt></li>
+<li><tt><a href="#parallel">parallel</a></tt></li>
+<li><tt><a href="#partition">partition</a></tt></li>
+<li><tt><a href="#polygon">polygon</a></tt></li>
+<li><tt><a href="#ref">ref</a></tt></li>
+<li><tt><a href="#right">right</a></tt></li>
+<li><tt><a href="#rounded-box">rounded-box</a></tt></li>
+<li><tt><a href="#row">row</a></tt></li>
+<li><tt><a href="#rule">rule</a></tt></li>
+<li><tt><a href="#sides">sides</a></tt></li>
+<li><tt><a href="#size">size</a></tt></li>
+<li><tt><a href="#straight">straight</a></tt></li>
+<li><tt><a href="#stroke">stroke</a></tt></li>
+<li><tt><a href="#tail">tail</a></tt></li>
+<li><tt><a href="#tailconnect">tailconnect</a></tt></li>
+<li><tt><a href="#triangle">triangle</a></tt></li>
+<li><tt><a href="#underline">underline</a></tt></li>
+<li><tt><a href="#v-head">v-head</a></tt></li>
+<li><tt><a href="#vertexconnect">vertexconnect</a></tt></li>
+<li><tt><a href="#vertical">vertical</a></tt></li>
+<li><tt><a href="#width">width</a></tt></li>
+<li><tt><a href="#word">word</a></tt></li>
+</ul>
+
+<hr />
+<h2>Element Details</h2>
+
+
+<hr />
+<h2><a name="grammar"></a>grammar</h2>
+<div>Top most rule for a grammar of gita visual language rules.</div>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#rule">rule</a>)*</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt></tt></p>
+
+
+<hr />
+<h2><a name="rule"></a>rule</h2>
+<div>Basic format for a gita visual grammar rule. A rule is basically a collection of
+    terminal entities, things that are recognised outright by the system, or non terminal
+    entities, which are are references to targets which are defined by other rules, and
+    the graphic relationships that exist between any and all of these entities in order for the
+    specified target to exist.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA target</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#grammar">grammar</a></tt></p>
+
+
+<hr />
+<h2><a name="ref"></a>ref</h2>
+<div>a reference to a compound rule ... i.e. a standard non-terminal</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA target</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="mark"></a>mark</h2>
+
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA char</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="number"></a>number</h2>
+<div>a number. corresponds to a closely grouped row of recognised digits</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="digit"></a>digit</h2>
+<div>a digit. corresponds to a closely grouped row of recognised digits</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="word"></a>word</h2>
+<div>a "word" is a closely grouped collection of letters.
+     <p>
+     This doesn't necessarily imply that any form of character recognition is performed. Instead,
+     this is a collection of strokes that have the visual semblance of a word. Character
+     recognition may be undertaken at a later stage, of course. On the other hand, as in the
+     case of non-roman alphabets and cursive scripts with joined letters, this may be
+     computationally intractable.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="letter"></a>letter</h2>
+<div>a "letter" is a group of strokes with the form of a letter.
+    <p>
+    This doesn't necessarily imply that any character recognition is done for this
+    item. It may be possible, it may be intractable. It may be in a language or
+    alphabet not familiar to the system.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="stroke"></a>stroke</h2>
+<div>a "stroke" corresponds to any single item of stroke data that is not categorised
+    as anything else.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="line"></a>line</h2>
+<div>a "line" corresponds to a graphic mark that is not self-intersecting, and whose endpoints
+    are not closed.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#straight">straight</a>, <a href="#horizontal">horizontal</a>, <a href="#vertical">vertical</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#headconnect">headconnect</a>, <a href="#tailconnect">tailconnect</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#tail">tail</a>, <a href="#fill">fill</a>, <a href="#parallel">parallel</a>, <a href="#intersection">intersection</a>, <a href="#cross">cross</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="triangle"></a>triangle</h2>
+<div>a "triangle" corresponds to a graphic mark or group thereof that has 3 sharp turning points between straight
+    segments, and whose endpoints are closed.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#empty">empty</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#headconnect">headconnect</a>, <a href="#tailconnect">tailconnect</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#fill">fill</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="arrow"></a>arrow</h2>
+<div>an "arrow" corresponds to a graphic mark or group thereof that is a non-self-intersecting line and
+    a single head equivalent to a hand drawn arrow.
+    <p>
+    This is the form of a very basic generic arrow, and one of the standard notations in the
+    language. More complex and/or precisely formatted forms of drawn arrows, such as those
+    that are required to do hand drawn UML diagrams, can be constructed as combinations of
+    other graphic primitives.</div>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#straight">straight</a>, <a href="#horizontal">horizontal</a>, <a href="#vertical">vertical</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#headconnect">headconnect</a>, <a href="#tailconnect">tailconnect</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#tail">tail</a>, <a href="#fill">fill</a>, <a href="#parallel">parallel</a>, <a href="#intersection">intersection</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="box"></a>box</h2>
+<div>a "box" corresponds to a graphic mark or group thereof that has 4 sharp turning points between straight
+    segments, and whose endpoints are closed.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#empty">empty</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#fill">fill</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="circle"></a>circle</h2>
+<div>a "circle" corresponds to a graphic mark or group thereof that has consistent and regular curvature,
+    no self-intersection, and whose endpoints are closed.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#empty">empty</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#fill">fill</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="broken-line"></a>broken-line</h2>
+<div>a "broken-line" corresponds to a group of graphic marks that are aligned along a path, occupy the
+    majority of the linear space defined by that path, has no self-intersection, and whose endpoints
+    not are closed.
+    <p>
+    Adjacency in a stream for strokes constituting this element is a reasonable assumption</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#straight">straight</a>, <a href="#horizontal">horizontal</a>, <a href="#vertical">vertical</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#headconnect">headconnect</a>, <a href="#tailconnect">tailconnect</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#tail">tail</a>, <a href="#fill">fill</a>, <a href="#parallel">parallel</a>, <a href="#intersection">intersection</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="dotted-line"></a>dotted-line</h2>
+<div>a "dotted-line" corresponds to a group of graphic marks that are aligned along a path, occupy the
+    minority of the linear space defined by that path, has no self-intersection, and whose endpoints
+    not are closed.
+    <p>
+    Adjacency in a stream for strokes constituting this element is a reasonable assumption</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#straight">straight</a>, <a href="#horizontal">horizontal</a>, <a href="#vertical">vertical</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#headconnect">headconnect</a>, <a href="#tailconnect">tailconnect</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#tail">tail</a>, <a href="#fill">fill</a>, <a href="#parallel">parallel</a>, <a href="#intersection">intersection</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="v-head"></a>v-head</h2>
+<div>a "v-head" corresponds to a graphic mark or group thereof that has 1 sharp turning point between straight
+    segments, and whose endpoints are not closed.
+    This has been specified to allow the specification within the grammar of some of the
+    forms of arrows used in UML.</div>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#headconnect">headconnect</a>, <a href="#tailconnect">tailconnect</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="diamond"></a>diamond</h2>
+<div>a "diamond" corresponds to a graphic mark or group thereof that has 4 sharp turning points between straight
+    segments, which fully encloses not other strokes, and whose endpoints are closed.
+    This has been specified to allow the specification within the grammar of some of the
+    forms of arrows used in UML.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#headconnect">headconnect</a>, <a href="#tailconnect">tailconnect</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="rounded-box"></a>rounded-box</h2>
+<div>a "rounded-box" corresponds to a graphic mark or group thereof that has 4 softly curved turning points between straight
+    segments, and whose endpoints are closed.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#empty">empty</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#fill">fill</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="polygon"></a>polygon</h2>
+<div>a "polygon" corresponds to a graphic mark or group thereof that has an arbitrary number of
+    sharp turning points between straight segments, and whose endpoints are closed.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>EMPTY</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#empty">empty</a>, <a href="#sides">sides</a>, <a href="#convex">convex</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#angle">angle</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#fill">fill</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="group"></a>group</h2>
+<div>the "group" relationship expresses close two dimensional adjacency between elements</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="contains"></a>contains</h2>
+<div>the "contains" relationship expresses that the first mentioned element is a
+    graphic that wholly encloses the other strokes within the relationship</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#triangle">triangle</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="follow"></a>follow</h2>
+<div>the "follow" relationship expresses close two dimensional adjacency between elements with
+    a left to right adjacency or at the beginning of the next "row" of strokes in the bounding box
+    of the element. This is the closely allied to the concept of adjacency in a block of text.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="right"></a>right</h2>
+<div>the "right" relationship expresses close two dimensional adjacency between elements that follow
+    each other with strict left to right adjacency.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="row"></a>row</h2>
+<div>the "row" relationship expresses close two dimensional adjacency between elements that are on the
+    same visual row of data.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="column"></a>column</h2>
+<div>the "column" relationship expresses close two dimensional adjacency between elements that are in
+    the same visual column of data</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="underline"></a>underline</h2>
+<div>the "underline" relationship expresses that the first refered element is a line that is straight,
+    and which runs geometrically underneath the other elements.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#line">line</a>, (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="below"></a>below</h2>
+<div>the "below" relationship expresses close two dimensional adjacency between elements that are
+    geometrically below each other. This is similar to, but less specific than, a "column"</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="empty"></a>empty</h2>
+<div>the "empty" relationship expresses that a graphic does not enclose any other elements</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#triangle">triangle</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="sides"></a>sides</h2>
+<div>the "sides" relationship expresses the number of sides that a particular polygon graphic may have</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA n</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#polygon">polygon</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="convex"></a>convex</h2>
+<div>the "convex" relationship expresses that a particular polygon is convex</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#polygon">polygon</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="straight"></a>straight</h2>
+<div>the "straight" relationship expresses the non-curvedness of a line, arrow, or a group constituting such</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="horizontal"></a>horizontal</h2>
+<div>the "horizontal" relationship expresses the linearity and horizontal directionality of a line or arrow element</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="vertical"></a>vertical</h2>
+<div>the "vertical" relationship expresses the linearity and vertical directionality of a line or arrow element</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="overlay"></a>overlay</h2>
+<div>the "overlay" relationship expresses that, within a given tolerance, the bounding boxes of elements
+    largely overlap.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="connect"></a>connect</h2>
+<div>the "connect" relationship expresses that the first element, a line or arrow, touches the
+    bounding boxes of the other elements in the relationship.
+    <p>
+    In the case of this referring to a single element, properties associated with the connection
+    are inherited by the relationship, so that the <i>connect</i> group may be subject to
+    further connection.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)?)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="endpoint"></a>endpoint</h2>
+<div>the "endpoint" relationship expresses no geometric relationship. Instead, it defines a
+    specific terminal point for single <i>connect</i> relationships that may be in other rules.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA label</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="branchpoint"></a>branchpoint</h2>
+<div>the "branchpoint" relationship expresses no geometric relationship. Instead, it defines a
+    specific terminal point for multiple <i>connect</i> relationships that may be in other rules. This differ from an
+    endpoint in that it may</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA label</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="headconnect"></a>headconnect</h2>
+<div>the "headconnect" relationship expresses close two dimensional adjacency between elements, and
+    that the linear element is attaches to an element that could be construed as an arrow head.
+    This is used in particular to construct the full family of specific arrows that may be used in
+    a UML diagram with differing semantic significance. It may be the object of "tailconnect"
+    or other connection relationships.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>), (<a href="#triangle">triangle</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#v-head">v-head</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#straight">straight</a>, <a href="#horizontal">horizontal</a>, <a href="#vertical">vertical</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#headconnect">headconnect</a>, <a href="#tailconnect">tailconnect</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#tail">tail</a>, <a href="#fill">fill</a>, <a href="#parallel">parallel</a>, <a href="#intersection">intersection</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="tailconnect"></a>tailconnect</h2>
+<div>the "tailconnect" relationship expresses close two dimensional adjacency between elements, and
+    that the linear element is attaches to an element that could be construed as an arrow head.
+    This is used in particular to construct the full family of specific arrows that may be used in
+    a UML diagram with differing semantic significance.It may be the object of "headconnect"
+    or other connection relationships.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>), (<a href="#triangle">triangle</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#v-head">v-head</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#straight">straight</a>, <a href="#horizontal">horizontal</a>, <a href="#vertical">vertical</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#headconnect">headconnect</a>, <a href="#tailconnect">tailconnect</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#angleconnect">angleconnect</a>, <a href="#tail">tail</a>, <a href="#fill">fill</a>, <a href="#parallel">parallel</a>, <a href="#intersection">intersection</a>, <a href="#edgeconnect">edgeconnect</a>, <a href="#vertexconnect">vertexconnect</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="angle"></a>angle</h2>
+<div>the "angle" relationship expresses an angle that must exist between two linear elements, with
+    no implication of adjacency or connection.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA angle</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>), (<a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>)?)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="label"></a>label</h2>
+<div>the "label" relationship expresses no geometric relationships, but provides a referrable tag to
+    a group of elements so that the group as a whole may be referred to in other rules than the one
+    in which their geometry is specified.
+    <p>
+    This is a bit of a fractious concept, akin to a goto in a programming language. It shouldn't
+    make searches through geomtry space or language space any more difficult, and is necessary for
+    expressing visual relationships of any reasonable complexity e.g. handwritten UML diagrams.
+    <p>
+    In the current concept of the language, the labels given by this construct exist in the
+    same name space scope as rule targets. They should be accessed by the "ref" element.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA label</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="width"></a>width</h2>
+<div>the "width" relationship expresses close x-dimensional relationships between the bounding boxes
+    of named elements, within a given scale, and to a particular tolerance</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA scale</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="height"></a>height</h2>
+<div>the "height" relationship expresses close y-dimensional relationships between the bounding boxes
+    of named elements, within a given scale, and to a particular tolerance</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA scale</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="size"></a>size</h2>
+<div>the "size" relationship expresses close x- and y-dimensional relationships between the bounding boxes
+    of named elements, within a given scale, and to a particular tolerance</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA scale</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="angleconnect"></a>angleconnect</h2>
+<div>the "angleconnect" relationship that a linear graphic and another group are connected as per the
+    "connect" relationship, at a particular angle and tolerance.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA angle</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>), (<a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="tail"></a>tail</h2>
+<div>the "tail" relationship expresses no geometric relationship, but reverses the order of tail and
+    head in the given linear graphic element.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="fill"></a>fill</h2>
+<div>the "fill" relationship expresses that the given enclosing elements is largely visually filled by the
+    other elements.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#triangle">triangle</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="parallel"></a>parallel</h2>
+<div>the "parallel" relationship expresses that two linear graphic elements are largely straight and running
+    in the same direction.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>), (<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="intersection"></a>intersection</h2>
+<div>the "intersection" relationship expresses that two linear elements intersect at a point, at
+    a specific angle, with a given tolerance.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA angle</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>), (<a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="cross"></a>cross</h2>
+<div>the "cross" relationship expresses an intersection between two lines that are more or less the
+    same size. That is the lines form an 'X'.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#IMPLIED CDATA tolerance</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>(<a href="#line">line</a>, <a href="#line">line</a>)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="edgeconnect"></a>edgeconnect</h2>
+<div>the "edgeconnect" relationship specifies edgewise connection relationships that exist
+    between two enclosing graphics.
+    This relationship was constructed, in particular, for the specification of handdrawn UML diagrams.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA box-index</tt></li>
+<li><tt>#IMPLIED CDATA tgt-index</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#triangle">triangle</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>), (<a href="#triangle">triangle</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="vertexconnect"></a>vertexconnect</h2>
+<div>the "vertexconnect" relationship specifies corner-wise connection relationships that exist
+    between two enclosing graphics.
+    This relationship was constructed, in particular, for the specification of hand-drawn UML diagrams.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA box-index</tt></li>
+<li><tt>#IMPLIED CDATA tgt-index</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#triangle">triangle</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>), (<a href="#triangle">triangle</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>))</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="partition"></a>partition</h2>
+<div>the "partition" relationship specifies a partitioned region in a graphic.
+    This relationship was constructed, in particular, for
+    the specification of hand-drawn UML diagrams.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#REQUIRED CDATA label</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#triangle">triangle</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+
+
+<hr />
+<h2><a name="compartment"></a>compartment</h2>
+<div>the "compartment" relationship specifies that a group of marks belongs to a particular
+    region in a partitioned graphic. This relationship was constructed, in particular, for
+    the specification of hand-drawn UML diagrams.</div>
+<p><b>Declared Attributes</b></p>
+<ul><li><tt>#IMPLIED CDATA id</tt></li>
+<li><tt>#IMPLIED CDATA index</tt></li>
+</ul>
+<p><b>Element Content Model</b></p>
+<p><tt>((<a href="#triangle">triangle</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>), (<a href="#group">group</a>&nbsp;| <a href="#contains">contains</a>&nbsp;| <a href="#follow">follow</a>&nbsp;| <a href="#right">right</a>&nbsp;| <a href="#row">row</a>&nbsp;| <a href="#column">column</a>&nbsp;| <a href="#underline">underline</a>&nbsp;| <a href="#straight">straight</a>&nbsp;| <a href="#horizontal">horizontal</a>&nbsp;| <a href="#vertical">vertical</a>&nbsp;| <a href="#overlay">overlay</a>&nbsp;| <a href="#connect">connect</a>&nbsp;| <a href="#endpoint">endpoint</a>&nbsp;| <a href="#branchpoint">branchpoint</a>&nbsp;| <a href="#headconnect">headconnect</a>&nbsp;| <a href="#tailconnect">tailconnect</a>&nbsp;| <a href="#angle">angle</a>&nbsp;| <a href="#label">label</a>&nbsp;| <a href="#width">width</a>&nbsp;| <a href="#height">height</a>&nbsp;| <a href="#size">size</a>&nbsp;| <a href="#angleconnect">angleconnect</a>&nbsp;| <a href="#tail">tail</a>&nbsp;| <a href="#below">below</a>&nbsp;| <a href="#empty">empty</a>&nbsp;| <a href="#sides">sides</a>&nbsp;| <a href="#convex">convex</a>&nbsp;| <a href="#fill">fill</a>&nbsp;| <a href="#parallel">parallel</a>&nbsp;| <a href="#intersection">intersection</a>&nbsp;| <a href="#cross">cross</a>&nbsp;| <a href="#edgeconnect">edgeconnect</a>&nbsp;| <a href="#vertexconnect">vertexconnect</a>&nbsp;| <a href="#partition">partition</a>&nbsp;| <a href="#compartment">compartment</a>&nbsp;| <a href="#line">line</a>&nbsp;| <a href="#triangle">triangle</a>&nbsp;| <a href="#arrow">arrow</a>&nbsp;| <a href="#box">box</a>&nbsp;| <a href="#circle">circle</a>&nbsp;| <a href="#broken-line">broken-line</a>&nbsp;| <a href="#dotted-line">dotted-line</a>&nbsp;| <a href="#v-head">v-head</a>&nbsp;| <a href="#diamond">diamond</a>&nbsp;| <a href="#rounded-box">rounded-box</a>&nbsp;| <a href="#polygon">polygon</a>&nbsp;| <a href="#mark">mark</a>&nbsp;| <a href="#stroke">stroke</a>&nbsp;| <a href="#word">word</a>&nbsp;| <a href="#number">number</a>&nbsp;| <a href="#digit">digit</a>&nbsp;| <a href="#letter">letter</a>&nbsp;| <a href="#ref">ref</a>)*)</tt></p>
+<p><b>Referenced by</b></p>
+<p><tt><a href="#rule">rule</a>, <a href="#group">group</a>, <a href="#contains">contains</a>, <a href="#follow">follow</a>, <a href="#right">right</a>, <a href="#row">row</a>, <a href="#column">column</a>, <a href="#underline">underline</a>, <a href="#below">below</a>, <a href="#overlay">overlay</a>, <a href="#connect">connect</a>, <a href="#endpoint">endpoint</a>, <a href="#branchpoint">branchpoint</a>, <a href="#label">label</a>, <a href="#width">width</a>, <a href="#height">height</a>, <a href="#size">size</a>, <a href="#fill">fill</a>, <a href="#partition">partition</a>, <a href="#compartment">compartment</a></tt></p>
+</body></html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" ?>
+<svg width="179.474" height="400.0">
+<title>transforms graphed</title>
+<g>
+<path id="equalised real" style="fill:none;stroke:#227722;stroke-width:2.0;" d="M0.0 10.0 44.8685 70.0 89.737 10.0 134.6055 70.0" />
+<text x="0.0" y="10.0" font-family="Verdana" font-size="11.5">equalised real</text>
+<path id="equalised real axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 40.0 179.474 40.0" />
+<path id="equalised im" style="fill:none;stroke:#772222;stroke-width:2.0;" d="M0.0 NaN 44.8685 NaN 89.737 NaN 134.6055 NaN" />
+<text x="0.0" y="NaN" font-family="Verdana" font-size="11.5">equalised im</text>
+<path id="equalised im axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 100.0 179.474 100.0" />
+<path id="equalised magnitude" style="fill:none;stroke:#227722;stroke-width:2.0;" d="M0.0 175.0 44.8685 190.0 89.737 190.0 134.6055 190.0" />
+<text x="0.0" y="175.0" font-family="Verdana" font-size="11.5">equalised magnitude</text>
+<path id="equalised magnitude axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 160.0 179.474 160.0" />
+<path id="equalised phase" style="fill:none;stroke:#772222;stroke-width:2.0;" d="M0.0 220.0 44.8685 220.0 89.737 190.0 134.6055 220.0" />
+<text x="0.0" y="220.0" font-family="Verdana" font-size="11.5">equalised phase</text>
+<path id="equalised phase axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 220.0 179.474 220.0" />
+<path id="equalised theta" style="fill:none;stroke:#222277;stroke-width:2.0;" d="M0.0 280.0 44.8685 280.0 89.737 280.0011 134.6055 279.9997 179.474 280.0003 224.3425 279.99985 269.211 280.0 314.0795 280.00006 358.948 279.99985 403.8165 280.0 448.685 279.90268 493.5535 279.69055 538.422 279.99976 583.2905 280.00024 628.159 280.0 673.02747 280.00003 717.896 279.99997 762.7645 280.0 807.633 279.99973 852.50146 280.0003 897.37 279.99997 942.2385 280.0 987.107 280.00003 1031.9755 279.99997 1076.844 279.9997 1121.7125 280.0003 1166.581 280.00003 1211.4495 279.99997 1256.318 279.96948 1301.1865 279.98932 1346.0549 280.0 1390.9235 280.0 1435.792 280.0 1480.6605 310.0 1525.529 280.12762 1570.3975 279.9999 1615.266 280.8426 1660.1345 280.6295 1705.0029 279.9999 1749.8715 280.00266" />
+<text x="0.0" y="280.0" font-family="Verdana" font-size="11.5">equalised theta</text>
+<path id="equalised theta axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 280.0 1794.74 280.0" />
+<path id="rawish theta" style="fill:none;stroke:#772277;stroke-width:2.0;" d="M0.0 340.0 44.8685 340.0 89.737 339.59482 134.6055 339.959 179.474 370.0 224.3425 341.4656" />
+<text x="0.0" y="340.0" font-family="Verdana" font-size="11.5">rawish theta</text>
+<path id="rawish theta axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 340.0 269.211 340.0" />
+<path id="straightened theta" style="fill:none;stroke:#227777;stroke-width:2.0;" d="M0.0 400.0 44.8685 400.0 89.737 370.0" />
+<text x="0.0" y="400.0" font-family="Verdana" font-size="11.5">straightened theta</text>
+<path id="straightened theta axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 400.0 134.6055 400.0" />
+<path id="straightened real" style="fill:none;stroke:#227722;stroke-width:2.0;" d="M0.0 457.3546 44.8685 490.0 89.737 457.3546 134.6055 435.29077" />
+<text x="0.0" y="457.3546" font-family="Verdana" font-size="11.5">straightened real</text>
+<path id="straightened real axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 460.0 179.474 460.0" />
+<path id="straightened im" style="fill:none;stroke:#772222;stroke-width:2.0;" d="M0.0 550.0 44.8685 514.5806 89.737 500.83875 134.6055 514.5806" />
+<text x="0.0" y="550.0" font-family="Verdana" font-size="11.5">straightened im</text>
+<path id="straightened im axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 520.0 179.474 520.0" />
+<path id="straightened magnitude" style="fill:none;stroke:#227722;stroke-width:2.0;" d="M0.0 596.4167 44.8685 610.0 89.737 601.0657 134.6055 604.9357" />
+<text x="0.0" y="596.4167" font-family="Verdana" font-size="11.5">straightened magnitude</text>
+<path id="straightened magnitude axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 580.0 179.474 580.0" />
+<path id="straightened phase" style="fill:none;stroke:#772222;stroke-width:2.0;" d="M0.0 640.0 44.8685 642.0507 89.737 657.5132 134.6055 670.0" />
+<text x="0.0" y="640.0" font-family="Verdana" font-size="11.5">straightened phase</text>
+<path id="straightened phase axis" style="fill:none;stroke:#000000;stroke-width:1;" d="M0.0 640.0 179.474 640.0" />
+<path id="stroke_23" style="fill:none;stroke:#000000;stroke-width:2;" d="M62.323997 700.676 30.0 700.152 37.124 700.376" />
+</g></svg>

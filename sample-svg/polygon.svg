@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 10.0, SVG Export Plug-In . SVG Version: 3.0.0 Build 43)  -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 width="354.171" height="273.494" viewBox="0 0 354.171 273.494" overflow="visible" enable-background="new 0 0 354.171 273.494"
+	 xml:space="preserve">
+
+	<g id="Layer_1"  stroke="#000000">
+		<path id="triangle" style="fill:none;stroke:#000000;stroke-width:1.0;"   d="M7.595,101.144l45.361-78.567l45.361,78.567H7.595z"/>
+		<path id="square" style="fill:none;stroke:#000000;stroke-width:1.0;"   d="M136.77,98.284V24.21h74.074v74.074H136.77z"/>
+		<path id="pentagon" style="fill:none;stroke:#000000;stroke-width:1.0;"   d="M272.981,95.372l-19.027-58.561l49.814-36.192l49.814,36.192l-19.027,58.561H272.981z"/>
+		<path id="hexagon" style="fill:none;stroke:#000000;stroke-width:1.0;"   d="M26.766,269.697L0.577,224.336l26.188-45.361h52.379l26.189,45.361l-26.189,45.361 H26.766z"/>
+		<path id="heptagon" style="fill:none;stroke:#000000;stroke-width:1.0;"   d="M151.08,271.401l-28.339-35.536l10.114-44.313l40.951-19.721l40.951,19.721 l10.114,44.313l-28.339,35.536H151.08z"/>
+		<path id="octagon" style="fill:none;stroke:#000000;stroke-width:1.0;"  d="M283.724,272.994l-28.348-28.347v-40.089l28.348-28.347h40.088l28.348,28.347v40.089 l-28.348,28.347H283.724z"/>
+	</g>
+</svg>

@@ -1,0 +1,91 @@
+/*
+ * SignatureSample.java
+ *
+ * Created on 21 February 2005, 11:35
+ */
+
+package gita;
+ 
+import zone.Point;
+import gita.*;
+
+/**
+ * Extension of InkSample for strokes that are a part of a signature.
+ *<p>
+ * Includes additional sample based information regarding the features of a signature. In particular,
+ * a "keying" value, which would be a number from [0,1] indicating that this point is a keypoint of the
+ * signature. That is, it's a centre of a significant consistent geometric (or time or pressure)change.
+ * Initially, the idea behind keypoints is to solve the problem of varying numbers of strokes that might
+ * compose a signature. Signature comparisons would be between a group of one or more raw strokes, and a
+ * composite single stroke that is extracted from user provided training data. The keypoints are initially
+ * the points of stroke beginning and ending of the training data within the composite model signature.
+ * Note that even within the training data, not all samples will have the same number of major strokes, and
+ * this is consistent with many normal, acceptable, real world signatures.
+ *<p>
+ * The current strategy is to use the keypoints for all features, as well as signature beginning and ending,
+ * and to match input signatures to templates using a variant of "Iterative Closest Point" that
+ * establishes a priority for these keypoints, and tries to scale the strokes of an input signature
+ * to fit well relative to these "fixed points"
+ *<p>
+ * The ark length is the main "co-ordinate" within a signature. This is the cumulative length of the
+ * signature at this particular sample point. Arc length is normalised to 1 over the length of an
+ * entire signature. It is hoped that this will give a reasonably scale invariant means for
+ * comparing signatures.
+ *
+ * @author dak
+ * @since you asked
+ */
+public class SignatureSample extends InkSample
+{
+     /**
+      * Creates a new instance of SignatureSample
+      */
+    public SignatureSample()
+    {
+        super();
+        keypoint = 0;
+        arklen = 0;
+    }
+
+     /**
+      * Creates a new instance of SignatureSample
+      * @param x the x co-ord for point data
+      * @param y the y co-ord for point data
+      */
+    public SignatureSample(
+            float x,
+            float y)
+    {
+        super(x,y);
+        keypoint = 0;
+        arklen = 0;
+    }
+    
+     /**
+      * Creates a new instance of SignatureSample
+      * @param p position of this sample
+      */
+    public SignatureSample(
+            Point p)
+    {
+        super(p);
+        keypoint = 0;
+        arklen = 0;
+    }
+    
+     /**
+      * Creates a new instance of SignatureSample
+      * @param p position of this sample
+      */
+    public SignatureSample(InkSample p)
+    {
+        super(p);
+        keypoint = 0;
+        arklen = 0;
+    }
+    
+    /** the keypoint rating of this particular sample */
+    public float   keypoint;
+    /** the normalised ark length value for this particular sample */
+    public float   arklen;
+}

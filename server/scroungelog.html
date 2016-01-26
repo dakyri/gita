@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+  <HEAD>
+    <TITLE>Anoto pen server, GITA</TITLE>
+    <link rel="stylesheet" href="style/zone.css">
+ </HEAD>
+  <BODY>
+    <FONT SIZE="-1">
+    <FORM enctype="multipart/form-data" method="post" target="upper" action="servlet/gita">
+    <P>Input an svg file of ink data to send...
+        <INPUT type="file" name="ink_data" size="80">
+        <input type="hidden" name="input_mode" value="normal">
+        <input type="hidden" name="input_fmt" value="svg">
+        <input type="hidden" name="max" value="10000">
+        <INPUT type="submit" value="Send it">
+    </form>
+    <BR><BR><BR>
+    <applet code="client.Scrounger" codebase="classes" height="30" width="640">
+        <param name="p1" value="v1">
+        <object codetype="application/java"
+        id="Scrounger"
+        standby="loading..."
+        height="30" width="640"
+        title="hook to anoto demo"
+        codebase="classes"
+        classid="java:Scrounger.class">
+        </OBJECT>
+    </applet>
+    </FONT>
+  </BODY>
+</HTML>

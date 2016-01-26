@@ -1,0 +1,83 @@
+/*
+ * SignaturEater.java
+ *
+ * Created on 24 February 2005, 16:20
+ *
+ *  - Generates a model signature for matching from a set of training data
+ *  - Eats signature data and spits out validations of such against a model signature
+ */
+
+package gita;
+ 
+import java.util.LinkedList;
+import java.lang.Math;
+
+/*
+ *
+ * @author dak
+ */
+public class SignaturEater
+{
+    /*
+     * 
+     */
+    public class KeypointNode
+    {
+        public KeypointNode()
+        {
+            keys = new LinkedList();
+        }
+
+        public void sumAte()
+        {
+            meanArk = 0;
+            varArk = 0;
+            double   sumA = 0;
+            double   sumA2 = 0;
+            float   nArk = 0;
+            for (SignatureSample s:keys) {
+                nArk++;
+                sumA += s.arklen;
+                sumA2 += s.arklen * s.arklen;
+            }
+            meanArk = sumA / nArk;
+            varArk = Math.sqrt((sumA2/nArk) - (meanArk*meanArk));
+        }
+
+        LinkedList<SignatureSample>  keys = null;
+        double   meanArk = 0;
+        double   varArk = 0;
+    }
+    
+    /** Creates a new instance of SignaturEater */
+    public SignaturEater()
+    {
+    }
+
+    
+    public void buildSignatureModel(LinkedList<SignatureContainer> sigs)
+    {
+        /*
+         * master template
+         *  - has (at least) as many substroke keypoints as the maximum no of substroke keypoints in any of the sigs
+         *  - get a rough alignment of substroke keypoints
+         *  - get a set of mean substroke keypoints
+         *  - get the variance for each element of this set
+         *  - get a ranked significance rating of the keypoints depending on the number of signatures that have this as a keypoint
+         *  - case where the substrokes align their beginning and end in different spots is a bit tricky
+         *  - align peaks.
+         *          ???? how do we scale this
+         *  - calculate the mean uberSig
+         *  - calculate some measure of variance within the mean uberSig
+         */
+        
+        /*
+         * build a minimal set of 
+         */
+        for (SignatureContainer s:sigs) {
+            
+        }
+        
+    }
+    
+}

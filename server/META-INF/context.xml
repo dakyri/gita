@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context docBase="D:\dak\java\projects\anoto\server" path="/gita">
+  <Logger className="org.apache.catalina.logger.FileLogger" prefix="Gita" suffix=".log" timestamp="true"/>
+</Context>

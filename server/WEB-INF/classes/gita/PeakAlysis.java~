@@ -1,0 +1,22 @@
+/*
+ * PeakAlysis.java
+ *
+ * Created on 19 November 2004, 14:27
+ */
+
+package gita;
+ 
+/**
+ *
+ * @author  dak
+ *   pull relevant information out regarding peaks ...
+ *  pass it an array of y values, and an array of x values 
+ */
+public class PeakAlysis {
+    
+    /** Creates a new instance of PeakAlysis */
+    public PeakAlysis(float f[], float x[])
+    {
+    }
+    
+}

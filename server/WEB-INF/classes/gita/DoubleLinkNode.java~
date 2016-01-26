@@ -1,0 +1,24 @@
+/*
+ * DoubleLinkNode.java
+ *
+ * Created on 12 May 2005, 13:06
+ *
+ */
+
+package gita;
+
+/**
+ *
+ * @author dak
+ */
+public class DoubleLinkNode
+{
+    
+    /** Creates a new instance of DoubleLinkNode */
+    public DoubleLinkNode() {
+        next = prev = null;
+    }
+    
+    public DoubleLinkNode              next = null;
+    public DoubleLinkNode              prev = null;
+}

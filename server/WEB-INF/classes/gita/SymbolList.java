@@ -1,0 +1,251 @@
+/*
+ * SymbolList.java
+ *
+ * Created on 12 May 2005, 13:06
+ *
+ */
+
+package gita;
+
+import zone.DoubleLinkList;
+import zone.DoubleLinkNode;
+
+/**
+ * A list of symbols. This is doubly linked. This class forms part of the core of the parse tree
+ * for gita. It may well change completely.
+ *<p>
+ * It should be expanded greatly to allow for easier comparison of geometric relations between
+ * symbols and strokes. For instance, it is by no means necessary that adjacent strokes are
+ * adjacent, or even near each other in the list. Should keep a cache of relationships (somehow!)
+ * and maintain it during list additions and deletions.
+ *<p>
+ * The fuzzy nature of symbols and interpretations brings its own problems. The structures will
+ * quickly end up quite convoluted. Compound symbols are composed of other groups of symbols, which
+ * currently would be left in the list. Not clear yet what the best implementation for all
+ * this twistedness should be. 
+ *
+ * @see DoubleLinkList
+ * @see DoubleLinkNode
+ * @author dak
+ * @since you asked
+ */
+public class SymbolList extends DoubleLinkList<Symbol>
+{
+    
+    /** Creates a new instance of SymbolList */
+    public SymbolList()
+    {
+        super();
+    }
+    
+    /**
+     * adds a symbol to the end of the <i>SymbolList</i>.
+     *<p>
+     * this method merely wraps the creation of a new symbol with the given parameters around the DoubleLinkList add method
+     *
+     * @param t type of symbol
+     * @param c certainty value for this symbolic interpretation of the given group of strokes
+     * @param si the strokes involved in the symbol
+     * @return true if the symbol is added, false if there is an error
+     * @see DoubleLinkList
+     * @see DoubleLinkNode
+     */
+    public boolean add(Symbol.Type t, float c, Stroke ... si)
+    {
+        return add(new Symbol(t, c, si));
+    }
+    
+    /**
+     * adds a symbol to the end of the <i>SymbolList</i>.
+     *<p>
+     * this method merely wraps the creation of a new symbol with the given parameters around the DoubleLinkList add method
+     *
+     * @param t type of symbol
+     * @param c certainty value for this symbolic interpretation of the given group of strokes
+     * @param v the value of the interpretation (e.g. the date corresponding to a written date)
+     * @param si the strokes involved in the symbol
+     * @return true if the symbol is added, false if there is an error
+     * @see DoubleLinkList
+     * @see DoubleLinkNode
+     */
+    public boolean add(Symbol.Type t, float c, SymbolValue v, Stroke ... si)
+    {
+        return add(new Symbol(t, c, v, si));
+    }
+    
+    /**
+     * adds a symbol to a particular position in the <i>SymbolList</i>.
+     *<p>
+     * this method merely wraps the creation of a new symbol with the given parameters around the DoubleLinkList add method
+     *
+     * @param t type of symbol
+     * @param c certainty value for this symbolic interpretation of the given group of strokes
+     * @param si the strokes involved in the symbol
+     * @return true if the symbol is added, false if there is an error
+     * @see DoubleLinkList
+     * @see DoubleLinkNode
+     */
+    public boolean add(DoubleLinkNode at, Symbol.Type t, float c, Stroke ... si)
+    {
+        return add(new Symbol(t, c, si), at);
+    }
+    
+    /**
+     * adds a symbol to a particular position of the <i>SymbolList</i>.
+     *<p>
+     * this method merely wraps the creation of a new symbol with the given parameters around the DoubleLinkList add method
+     *
+     * @param t type of symbol
+     * @param c certainty value for this symbolic interpretation of the given group of strokes
+     * @param v the value of the interpretation (e.g. the date corresponding to a written date)
+     * @param si the strokes involved in the symbol
+     * @return true if the symbol is added, false if there is an error
+     * @see DoubleLinkList
+     * @see DoubleLinkNode
+     */
+    public boolean add(DoubleLinkNode at, Symbol.Type t, float c, SymbolValue v, Stroke ... si)
+    {
+        return add(new Symbol(t, c, v, si), at);
+    }
+
+//////////////////////////////////////////////////////////////////////////
+// overrides of base class. these are the bits that should do
+// geometric relationship caches ....
+// ... perhaps should add the collection based methods to this, though
+// that should be covered by inheritance, the <i>DoubleLinkList</i> versions
+// should act through these methods, except for <b>retainAll</b>, which
+// is implemented directly
+//////////////////////////////////////////////////////////////////////////
+    
+    /**
+     * Adds the given element to the tail of the list.
+     * Returns <tt>true</tt> if this collection changed as a
+     * result of the call.
+     * If the new element has a non-null prev or next link, it is presumed to be already
+     * in a list, either this or another one, and false is returned.
+     * <p>
+     *
+     * If a collection refuses to add a particular element for any reason
+     * other than that it already contains the element, it <i>must</i> throw
+     * an exception (rather than returning <tt>false</tt>).  This preserves
+     * the invariant that a collection always contains the specified element
+     * after this call returns.
+     *
+     * @param o element whose presence in this collection is to be ensured.
+     * @return <tt>true</tt> if this collection changed as a result of the
+     *         call
+     * 
+     * @throws UnsupportedOperationException <tt>add</tt> is not supported by
+     *         this collection.
+     * @throws ClassCastException class of the specified element prevents it
+     *         from being added to this collection.
+     * @throws NullPointerException if the specified element is null and this
+     *         collection does not support null elements.
+     * @throws IllegalArgumentException some aspect of this element prevents
+     *         it from being added to this collection.
+     * @see DoubleLinkList
+     * @see DoubleLinkNode
+     */
+    public boolean add(Symbol o) 
+    {
+        return super.add(o);
+    }
+    
+    /**
+     * Inserts the given element at the head of the list.
+     * Returns <tt>true</tt> if this collection changed as a
+     * result of the call.
+     * If the new element has a non-null prev or next link, it is presumed to be already
+     * in a list, either this or another one, and false is returned.
+     *
+     * @param o element whose presence in this collection is to be ensured.
+     * @return <tt>true</tt> if this collection changed as a result of the
+     *         call
+     * 
+     * @throws UnsupportedOperationException <tt>add</tt> is not supported by
+     *         this collection.
+     * @throws ClassCastException class of the specified element prevents it
+     *         from being added to this collection.
+     * @throws NullPointerException if the specified element is null and this
+     *         collection does not support null elements.
+     * @throws IllegalArgumentException some aspect of this element prevents
+     *         it from being added to this collection.
+     * @see DoubleLinkList
+     * @see DoubleLinkNode
+     */
+    public boolean insert(Symbol o)
+    {
+        return super.insert(o); 
+    }
+    
+    /**
+     * Adds the given element immediately after a particular element.
+     * Returns <tt>true</tt> if this collection changed as a
+     * result of the call.
+     * If the new element has a non-null prev or next link, it is presumed to be already
+     * in a list, either this or another one, and false is returned.
+     *
+     * @param o element whose presence in this collection is to be ensured.
+     * @param at element after which to add the element. If at is null, inserts
+     *    at the head of the list.
+     * @return <tt>true</tt> if this collection changed as a result of the
+     *         call
+     * 
+     * @throws UnsupportedOperationException <tt>add</tt> is not supported by
+     *         this collection.
+     * @throws ClassCastException class of the specified element prevents it
+     *         from being added to this collection.
+     * @throws NullPointerException if the specified element is null and this
+     *         collection does not support null elements.
+     * @throws IllegalArgumentException some aspect of this element prevents
+     *         it from being added to this collection.
+     * @see DoubleLinkList
+     * @see DoubleLinkNode
+     */
+    public boolean add(Symbol o, DoubleLinkNode at)
+    {
+        return super.add(o, at);
+    }
+    
+    /**
+     * Removes a single instance of the specified element from this
+     * collection, if it is present (optional operation).  More formally,
+     * removes an element <tt>e</tt> such that <tt>(o==null ?  e==null :
+     * o.equals(e))</tt>, if this collection contains one or more such
+     * elements.  Returns true if this collection contained the specified
+     * element (or equivalently, if this collection changed as a result of the
+     * call).
+     *
+     * @param o element to be removed from this collection, if present.
+     * @return <tt>true</tt> if this collection changed as a result of the
+     *         call
+     * 
+     * @throws ClassCastException if the type of the specified element
+     * 	       is incompatible with this collection (optional).
+     * @throws NullPointerException if the specified element is null and this
+     *         collection does not support null elements (optional).
+     * @throws UnsupportedOperationException remove is not supported by this
+     *         collection.
+     * @see DoubleLinkList
+     * @see DoubleLinkNode
+     */
+    public boolean remove(Object o)
+    {
+        return super.remove(o);
+    }
+    
+    /**
+     * Removes all symbols from the list, via the parent's method. This version should also
+     * clear any other data structures we build (at a later stage... )
+     * This collection will be empty after this method returns unless it
+     * throws an exception.
+     *
+     * @throws UnsupportedOperationException if the <tt>clear</tt> method is
+     *         not supported by this collection.
+     */
+    public void clear()
+    {
+        super.clear();
+    }
+
+}

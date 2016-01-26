@@ -1,0 +1,30 @@
+/**
+ * <i>Client</i> is a package of useful client side applets that is an adjunct to the server side
+ * visual language processing done by the gita package. 
+ *<p>
+ * The main (i.e. only) bit of useful stuff in this package is really the applet Scrounger, which is designed
+ * to take stroke data captured from the anoto device, and transmit it to the gita server. This is a
+ * bit of a hack to make things a bit more convenient, and make any demonstrations of gita have the
+ * semblance of smooth integration. All a bit annoying, because:
+ * <ul>
+ * <li>The full anoto device is designed to talk directly to a web server. This, however, requires the
+ *     full anoto developer kit, not some <a href="http://dictionary.reference.com/search?q=chickenshit">
+ *     <i>chickenshit</i></a> demo version. Unfortunately, they will hit you about $10K for the privilege.
+ * <li>The full anoto device does a lot of painful authorisation and handshaking that is pointlessly anal
+ *     and obstructive to the good use of the device. Why didn't they make it talk locally like any
+ *     self-respecting pointer/input device?
+ * </ul>
+ *<p>
+ * Ideally, gita's preferred input is SVG files: standard, w3c reccomended, and extensible for
+ * gita's own processing results. Gita does processing on Anoto logs to create equivalent svg which can
+ * then be used by the system. Other applets could be used to provide this translation and transport for
+ * other protocols/digital ink sources.
+ *<p>
+ * In a bigger picture, and fuller implementation, it may be useful to have a few applets running, and use
+ * them to actually execute application programs on the client side of the system ... or to act as
+ * some kind of client side intermediaries.
+ *
+ * @author dak
+ * @since you asked
+ */
+package client;

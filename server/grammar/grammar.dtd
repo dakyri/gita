@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---
+<p>
+This is the DTD for gita grammar rules
+<BR>Namespace: http://ns.gita.org/grammar-ns-1.0  
+<BR>Public identifier: "-//GITA//DTD GRAMMAR 1.0//EN"
+<BR>URI for the DTD: $(GITABASE)/grammar/grammar.dtd
+<p>
+This is basically a provisional grammar for the grammar rule database. This
+covers the intention of the rules expressed in the appendix of the GIDA patent.
+The intention here isn't to enforce well-formedness on the rules, so much as it
+is to create a consistent machine processable xml form that covers what's
+necessary to build a reasonable parser for the gita visual language.
+<p>
+The form of Gita visual grammar rules is very similar to the standard form of
+rewriting rules for context free grammars: A target, and a collection of terminals (things that
+have a definite, single significance) and non-terminals (things that are references to
+other grammar rules. The principle differences are that:
+<ul>
+<li>left to right adjacency in the body of a rule does not correspond
+ to left to right adjacency in the input stream. Instead, adjacency in a
+ rule implies that geometric adjacency holds between the entities. <B>This
+ does not imply adjacency in an input stream.</B> This is quite normal for
+ handwritten text. For instance, we dot i's and cross t's after finishing a word,
+ or go back over something to extend something that has already been stroked.
+ In some cases, we do expect nearness or adjacency of relevant composing strokes
+ in an input stream, such as for individual digits, the parts of an arrow, or the
+ sides of a rectangle. Geometric adjacency potentially implies a search through an
+ entire page space. This has enormous ramifications to the parsing process. 
+<li>predicates that need to hold between the elements of a rule body are added
+ to the language, "relationships" as they are referred to, throughout this documentation.
+ This is partly to deal with the adjacency issues, partly to give a two dimensional
+ adjency concept to a form that is more normally linear.
+</ul>
+<p>
+Some of the more obscure and convoluted relationships and entities originate in the expression of
+UML within gita. Unnecessary for simple applications, but greatly expands
+the expressive ability of the system.
+<p>
+here are the full set of relationships defined by the provisional gita patent:
+<ul>
+<li>Group(X  Y ... )
+<li>Contains(X Y ... )
+<li>Follow(X Y)
+<li>Right(X Y)
+<li>Row(X Y ...)
+<li>Column(X Y …)
+<li>Underline(X Y ...)
+<li>Straight(X)
+<li>Horizontal(X)
+<li>Vertical(X)
+<li>Overlay(X Y …T)
+<li>Connect(X Y [Z])
+<li>EndPoint(“label” X)
+<li>BranchPoint(“label” X)
+<li>HeadConnect(X Y)
+<li>TailConnect(X Y)
+<li>Angle(X [Y] A)
+<li>Label(“label” X)
+<li>Width(n X Y)
+<li>Height(n X Y)
+<li>Size(n X Y)
+<li>AngleConnect(X Y A)
+<li>Tail(X)
+<li>Below(X … Z)
+<li>Empty(X)
+<li>Sides(n X)
+<li>Convex(X)
+<li>Fill(X Y .. Z)
+<li>Parallel(X Y)
+<li>Intersection(X Y a)
+<li>Cross(X Y)
+<li>EdgeConnect(n X [m] Y)
+<li>VertexConnect(n X [m] Y)
+<li>Partition(“label” X Y .. Z)
+<li>Compartment([n] X Y .. Z)
+</ul>
+<p>
+The full set of graphic marks provided by gita
+<ul>
+<li>Line
+<li>Triangle
+<li>Arrow
+<li>Box
+<li>Circle
+<li>Broken-line
+<li>Dotted-line
+<li>V-head
+<li>Diamond
+<li>Rounded-Box
+<li>Polygon
+</ul>
+@title Form for Gita visual grammar rules
+@root grammar
+-->
+
+<!-- ==============================================================
+     ENTITY DEFINITIONS: collections of elements.
+     ============================================================== -->
+
+<!ENTITY % relationship 
+ "group | contains | follow | right | row | column | underline | straight | horizontal | vertical |
+  overlay | connect | endpoint | branchpoint |  headconnect | tailconnect |
+  angle | label | width | height | size | angleconnect | tail | below |
+  empty | sides | convex | fill | parallel | intersection | cross |
+  edgeconnect | vertexconnect | partition | compartment" >
+
+<!ENTITY % graphic
+ "line | triangle | arrow | box | circle | broken-line | dotted-line |
+  v-head | diamond | rounded-box | polygon" >
+
+<!ENTITY % enclosingGraphic
+ "triangle | box | circle | rounded-box | polygon" >
+  
+<!ENTITY % terminal
+ "mark | stroke | word | number | digit | letter" >
+
+<!ENTITY % termOrNonTerm
+ "%relationship; | %graphic; | %terminal; | ref" >
+
+<!ENTITY % lineOrArrow
+ "line | arrow | broken-line | dotted-line | headconnect | tailconnect" >
+ 
+<!ENTITY % arrowHead
+ "triangle | diamond | v-head" >
+ 
+<!-- ==============================================================
+     ENTITY DEFINITIONS: collections of attributes.
+     ============================================================== -->
+<!ENTITY % standardAttribs
+  "id CDATA #IMPLIED" >
+  
+<!ENTITY % scaleAttribs
+  "scale CDATA #REQUIRED" >
+  
+<!ENTITY % charAttribs
+  "char CDATA #REQUIRED" >
+  
+<!ENTITY % toleranceAttribs
+  "tolerance CDATA #IMPLIED" >
+  
+<!ENTITY % labelAttribs
+  "label CDATA #REQUIRED" >
+  
+<!ENTITY % sidecntAttribs
+  "n CDATA #REQUIRED" >
+  
+<!ENTITY % partitionIndAttribs
+  "index CDATA #IMPLIED" >
+
+<!ENTITY % targetAttribs
+  "target CDATA #REQUIRED" >
+
+<!ENTITY % angleAttribs
+  "angle CDATA #REQUIRED" >
+
+<!ENTITY % enclosureConnectAttribs
+  "box-index CDATA #REQUIRED
+   tgt-index CDATA #IMPLIED" >
+
+<!-- ==============================================================
+     DEFINITIONS CORRESPONDING TO: Document Structure 
+     ============================================================== -->
+<!--- Top most rule for a grammar of gita visual language rules.
+    -->
+<!ELEMENT grammar (rule)* >
+
+<!--- Basic format for a gita visual grammar rule. A rule is basically a collection of
+    terminal entities, things that are recognised outright by the system, or non terminal
+    entities, which are are references to targets which are defined by other rules, and
+    the graphic relationships that exist between any and all of these entities in order for the
+    specified target to exist.
+    -->
+<!ELEMENT rule ( %termOrNonTerm; )* >
+<!ATTLIST rule
+    %standardAttribs;
+    %targetAttribs;
+>
+
+<!--- a reference to a compound rule ... i.e. a standard non-terminal
+    -->
+<!ELEMENT ref EMPTY >
+<!ATTLIST ref
+    %standardAttribs;
+    %targetAttribs;
+>
+
+<!-- one of the terminal punctuation marks
+    -->
+<!ELEMENT mark EMPTY >
+<!ATTLIST mark
+    %standardAttribs;
+    %charAttribs;
+>
+
+<!--- a number. corresponds to a closely grouped row of recognised digits
+    -->
+<!ELEMENT number EMPTY >
+<!ATTLIST number
+    %standardAttribs;
+>
+
+<!--- a digit. corresponds to a closely grouped row of recognised digits
+    -->
+<!ELEMENT digit EMPTY >
+<!ATTLIST digit
+    %standardAttribs;
+>
+
+<!--- a "word" is a closely grouped collection of letters.
+     <p>
+     This doesn't necessarily imply that any form of character recognition is performed. Instead,
+     this is a collection of strokes that have the visual semblance of a word. Character
+     recognition may be undertaken at a later stage, of course. On the other hand, as in the
+     case of non-roman alphabets and cursive scripts with joined letters, this may be
+     computationally intractable.
+     -->
+<!ELEMENT word EMPTY >
+<!ATTLIST word
+    %standardAttribs;
+>
+
+<!--- a "letter" is a group of strokes with the form of a letter.
+    <p>
+    This doesn't necessarily imply that any character recognition is done for this
+    item. It may be possible, it may be intractable. It may be in a language or
+    alphabet not familiar to the system.
+    -->
+<!ELEMENT letter EMPTY >
+<!ATTLIST letter
+    %standardAttribs;
+>
+
+<!--- a "stroke" corresponds to any single item of stroke data that is not categorised
+    as anything else.
+    -->
+<!ELEMENT stroke EMPTY >
+<!ATTLIST stroke
+    %standardAttribs;
+>
+
+<!-- ==============================================================
+     DEFINITIONS CORRESPONDING TO: Graphic marks
+     ============================================================== -->
+     
+<!--- a "line" corresponds to a graphic mark that is not self-intersecting, and whose endpoints
+    are not closed.
+    -->
+<!ELEMENT line EMPTY >
+<!ATTLIST line
+    %standardAttribs;
+>
+
+<!--- a "triangle" corresponds to a graphic mark or group thereof that has 3 sharp turning points between straight
+    segments, and whose endpoints are closed.
+    -->
+<!ELEMENT triangle EMPTY >
+<!ATTLIST triangle
+    %standardAttribs;
+>
+
+<!--- an "arrow" corresponds to a graphic mark or group thereof that is a non-self-intersecting line and
+    a single head equivalent to a hand drawn arrow.
+    <p>
+    This is the form of a very basic generic arrow, and one of the standard notations in the
+    language. More complex and/or precisely formatted forms of drawn arrows, such as those
+    that are required to do hand drawn UML diagrams, can be constructed as combinations of
+    other graphic primitives.
+    -->
+<!ELEMENT arrow EMPTY >
+<!ATTLIST stroke
+    %standardAttribs;
+>
+
+<!--- a "box" corresponds to a graphic mark or group thereof that has 4 sharp turning points between straight
+    segments, and whose endpoints are closed.
+    -->
+<!ELEMENT box EMPTY >
+<!ATTLIST box
+    %standardAttribs;
+>
+
+<!--- a "circle" corresponds to a graphic mark or group thereof that has consistent and regular curvature,
+    no self-intersection, and whose endpoints are closed.
+    -->
+<!ELEMENT circle EMPTY >
+<!ATTLIST circle
+    %standardAttribs;
+>
+
+<!--- a "broken-line" corresponds to a group of graphic marks that are aligned along a path, occupy the
+    majority of the linear space defined by that path, has no self-intersection, and whose endpoints
+    not are closed.
+    <p>
+    Adjacency in a stream for strokes constituting this element is a reasonable assumption
+    -->
+<!ELEMENT broken-line EMPTY >
+<!ATTLIST broken-line
+    %standardAttribs;
+>
+
+<!--- a "dotted-line" corresponds to a group of graphic marks that are aligned along a path, occupy the
+    minority of the linear space defined by that path, has no self-intersection, and whose endpoints
+    not are closed.
+    <p>
+    Adjacency in a stream for strokes constituting this element is a reasonable assumption
+    -->
+<!ELEMENT dotted-line EMPTY >
+<!ATTLIST dotted-line
+    %standardAttribs;
+>
+
+<!--- a "v-head" corresponds to a graphic mark or group thereof that has 1 sharp turning point between straight
+    segments, and whose endpoints are not closed.
+    This has been specified to allow the specification within the grammar of some of the
+    forms of arrows used in UML.
+    -->
+<!ELEMENT v-head EMPTY >
+<!ATTLIST stroke
+    %standardAttribs;
+>
+
+<!--- a "diamond" corresponds to a graphic mark or group thereof that has 4 sharp turning points between straight
+    segments, which fully encloses not other strokes, and whose endpoints are closed.
+    This has been specified to allow the specification within the grammar of some of the
+    forms of arrows used in UML.
+    -->
+<!ELEMENT diamond EMPTY >
+<!ATTLIST diamond
+    %standardAttribs;
+>
+
+<!--- a "rounded-box" corresponds to a graphic mark or group thereof that has 4 softly curved turning points between straight
+    segments, and whose endpoints are closed.
+    -->
+<!ELEMENT rounded-box EMPTY >
+<!ATTLIST rounded-box
+    %standardAttribs;
+>
+
+<!--- a "polygon" corresponds to a graphic mark or group thereof that has an arbitrary number of
+    sharp turning points between straight segments, and whose endpoints are closed.
+    -->
+<!ELEMENT polygon EMPTY >
+<!ATTLIST polygon
+    %standardAttribs;
+>
+
+<!-- ==============================================================
+     DEFINITIONS CORRESPONDING TO: Relationships
+     ============================================================== -->
+<!--- the "group" relationship expresses close two dimensional adjacency between elements
+    -->
+<!ELEMENT group (%termOrNonTerm;)* >
+<!ATTLIST group
+    %standardAttribs;
+>
+
+<!--- the "contains" relationship expresses that the first mentioned element is a
+    graphic that wholly encloses the other strokes within the relationship 
+    -->
+<!ELEMENT contains ((%enclosingGraphic;), ( %termOrNonTerm; )* ) >
+<!ATTLIST contains
+    %standardAttribs;
+>
+
+<!--- the "follow" relationship expresses close two dimensional adjacency between elements with
+    a left to right adjacency or at the beginning of the next "row" of strokes in the bounding box
+    of the element. This is the closely allied to the concept of adjacency in a block of text.
+    -->
+<!ELEMENT follow ((%termOrNonTerm;), (%termOrNonTerm;)) >
+<!ATTLIST follow
+    %standardAttribs;
+>
+
+<!--- the "right" relationship expresses close two dimensional adjacency between elements that follow
+    each other with strict left to right adjacency.
+    -->
+<!ELEMENT right ((%termOrNonTerm;), (%termOrNonTerm;)) >
+<!ATTLIST right
+    %standardAttribs;
+>
+
+<!--- the "row" relationship expresses close two dimensional adjacency between elements that are on the
+    same visual row of data.
+    -->
+<!ELEMENT row (%termOrNonTerm;)*  >
+<!ATTLIST row
+    %standardAttribs;
+>
+
+<!--- the "column" relationship expresses close two dimensional adjacency between elements that are in
+    the same visual column of data
+    -->
+<!ELEMENT column (%termOrNonTerm;)*  >
+<!ATTLIST column
+    %standardAttribs;
+>
+
+<!--- the "underline" relationship expresses that the first refered element is a line that is straight,
+    and which runs geometrically underneath the other elements.
+    -->
+<!ELEMENT underline (line, (%termOrNonTerm;)*) >
+<!ATTLIST underline
+    %standardAttribs;
+>
+
+<!--- the "below" relationship expresses close two dimensional adjacency between elements that are
+    geometrically below each other. This is similar to, but less specific than, a "column"
+    -->
+<!ELEMENT below ((%termOrNonTerm;), (%termOrNonTerm;)*) >
+<!ATTLIST below
+    %standardAttribs;
+>
+
+<!--- the "empty" relationship expresses that a graphic does not enclose any other elements
+    -->
+<!ELEMENT empty (%enclosingGraphic;) >
+<!ATTLIST empty
+    %standardAttribs;
+>
+
+<!--- the "sides" relationship expresses the number of sides that a particular polygon graphic may have
+    -->
+<!ELEMENT sides (polygon) >
+<!ATTLIST sides
+    %standardAttribs;
+    %sidecntAttribs;
+>
+
+<!--- the "convex" relationship expresses that a particular polygon is convex
+    -->
+<!ELEMENT convex (polygon) >
+<!ATTLIST convex
+    %standardAttribs;
+>
+
+<!--- the "straight" relationship expresses the non-curvedness of a line, arrow, or a group constituting such
+    -->
+<!ELEMENT straight (%lineOrArrow;) >
+<!ATTLIST straight
+    %standardAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "horizontal" relationship expresses the linearity and horizontal directionality of a line or arrow element
+    -->
+<!ELEMENT horizontal (%lineOrArrow;) >
+<!ATTLIST horizontal
+    %standardAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "vertical" relationship expresses the linearity and vertical directionality of a line or arrow element
+    -->
+<!ELEMENT vertical (%lineOrArrow;) >
+<!ATTLIST vertical
+    %standardAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "overlay" relationship expresses that, within a given tolerance, the bounding boxes of elements
+    largely overlap.
+    -->
+<!ELEMENT overlay (%termOrNonTerm;)* >
+<!ATTLIST overlay
+    %standardAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "connect" relationship expresses that the first element, a line or arrow, touches the
+    bounding boxes of the other elements in the relationship.
+    <p>
+    In the case of this referring to a single element, properties associated with the connection
+    are inherited by the relationship, so that the <i>connect</i> group may be subject to
+    further connection. 
+    -->
+<!ELEMENT connect ((%lineOrArrow;), (%termOrNonTerm;), (%termOrNonTerm;)?) >
+<!ATTLIST connect
+    %standardAttribs;
+>
+
+<!--- the "endpoint" relationship expresses no geometric relationship. Instead, it defines a
+    specific terminal point for single <i>connect</i> relationships that may be in other rules. 
+    -->
+<!ELEMENT endpoint (%termOrNonTerm;) >
+<!ATTLIST endpoint
+    %standardAttribs;
+    %labelAttribs;
+>
+
+<!--- the "branchpoint" relationship expresses no geometric relationship. Instead, it defines a
+    specific terminal point for multiple <i>connect</i> relationships that may be in other rules. This differ from an
+    endpoint in that it may
+    -->
+<!ELEMENT branchpoint (%termOrNonTerm;) >
+<!ATTLIST branchpoint
+    %standardAttribs;
+    %labelAttribs;
+>
+
+<!--- the "headconnect" relationship expresses close two dimensional adjacency between elements, and
+    that the linear element is attaches to an element that could be construed as an arrow head.
+    This is used in particular to construct the full family of specific arrows that may be used in
+    a UML diagram with differing semantic significance. It may be the object of "tailconnect"
+    or other connection relationships.
+    -->
+<!ELEMENT headconnect ((%lineOrArrow;), (%arrowHead;)) >
+<!ATTLIST headconnect
+    %standardAttribs;
+>
+
+<!--- the "tailconnect" relationship expresses close two dimensional adjacency between elements, and
+    that the linear element is attaches to an element that could be construed as an arrow head.
+    This is used in particular to construct the full family of specific arrows that may be used in
+    a UML diagram with differing semantic significance.It may be the object of "headconnect"
+    or other connection relationships.
+    -->
+<!ELEMENT tailconnect ((%lineOrArrow;), (%arrowHead;)) >
+<!ATTLIST tailconnect
+    %standardAttribs;
+>
+
+<!--- the "angle" relationship expresses an angle that must exist between two linear elements, with
+    no implication of adjacency or connection.
+    -->
+<!ELEMENT angle ((%graphic;), (%graphic;)?) >
+<!ATTLIST angle
+    %standardAttribs;
+    %angleAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "label" relationship expresses no geometric relationships, but provides a referrable tag to
+    a group of elements so that the group as a whole may be referred to in other rules than the one
+    in which their geometry is specified.
+    <p>
+    This is a bit of a fractious concept, akin to a goto in a programming language. It shouldn't
+    make searches through geomtry space or language space any more difficult, and is necessary for
+    expressing visual relationships of any reasonable complexity e.g. handwritten UML diagrams.
+    <p>
+    In the current concept of the language, the labels given by this construct exist in the
+    same name space scope as rule targets. They should be accessed by the "ref" element. 
+    -->
+<!ELEMENT label (%termOrNonTerm;) >
+<!ATTLIST label
+    %standardAttribs;
+    %labelAttribs;
+>
+
+<!--- the "width" relationship expresses close x-dimensional relationships between the bounding boxes
+    of named elements, within a given scale, and to a particular tolerance
+    -->
+<!ELEMENT width ((%termOrNonTerm;), (%termOrNonTerm;)) >
+<!ATTLIST width
+    %standardAttribs;
+    %scaleAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "height" relationship expresses close y-dimensional relationships between the bounding boxes
+    of named elements, within a given scale, and to a particular tolerance
+    -->
+<!ELEMENT height ((%termOrNonTerm;), (%termOrNonTerm;)) >
+<!ATTLIST height
+    %standardAttribs;
+    %scaleAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "size" relationship expresses close x- and y-dimensional relationships between the bounding boxes
+    of named elements, within a given scale, and to a particular tolerance
+    -->
+<!ELEMENT size ((%termOrNonTerm;), (%termOrNonTerm;)) >
+<!ATTLIST size
+    %standardAttribs;
+    %scaleAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "angleconnect" relationship that a linear graphic and another group are connected as per the
+    "connect" relationship, at a particular angle and tolerance.
+    -->
+<!ELEMENT angleconnect ((%lineOrArrow;), (%graphic;)) >
+<!ATTLIST angleconnect
+    %standardAttribs;
+    %angleAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "tail" relationship expresses no geometric relationship, but reverses the order of tail and
+    head in the given linear graphic element.
+    -->
+<!ELEMENT tail (%lineOrArrow;) >
+<!ATTLIST tail
+    %standardAttribs;
+>
+
+<!--- the "fill" relationship expresses that the given enclosing elements is largely visually filled by the
+    other elements.
+    -->
+<!ELEMENT fill ((%enclosingGraphic;), (%termOrNonTerm;)*) >
+<!ATTLIST fill
+    %standardAttribs;
+>
+
+<!--- the "parallel" relationship expresses that two linear graphic elements are largely straight and running
+    in the same direction.
+    -->
+<!ELEMENT parallel ((%lineOrArrow;), (%lineOrArrow;)) >
+<!ATTLIST parallel
+    %standardAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "intersection" relationship expresses that two linear elements intersect at a point, at
+    a specific angle, with a given tolerance.
+    -->
+<!ELEMENT intersection ((%lineOrArrow;), (%lineOrArrow;)) >
+<!ATTLIST intersection
+    %standardAttribs;
+    %angleAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "cross" relationship expresses an intersection between two lines that are more or less the
+    same size. That is the lines form an 'X'.
+    -->
+<!ELEMENT cross (line, line) >
+<!ATTLIST cross
+    %standardAttribs;
+    %toleranceAttribs;
+>
+
+<!--- the "edgeconnect" relationship specifies edgewise connection relationships that exist
+    between two enclosing graphics.
+    This relationship was constructed, in particular, for the specification of handdrawn UML diagrams.
+    -->
+<!ELEMENT edgeconnect ((%enclosingGraphic;), (%enclosingGraphic; | %lineOrArrow;)) >
+<!ATTLIST edgeconnect
+    %standardAttribs;
+    %enclosureConnectAttribs;
+>
+
+<!--- the "vertexconnect" relationship specifies corner-wise connection relationships that exist
+    between two enclosing graphics.
+    This relationship was constructed, in particular, for the specification of hand-drawn UML diagrams.
+    -->
+<!ELEMENT vertexconnect ((%enclosingGraphic;), (%enclosingGraphic; | %lineOrArrow;)) >
+<!ATTLIST vertexconnect
+    %standardAttribs;
+    %enclosureConnectAttribs;
+>
+
+<!--- the "partition" relationship specifies a partitioned region in a graphic.
+    This relationship was constructed, in particular, for
+    the specification of hand-drawn UML diagrams.
+    -->
+<!ELEMENT partition ((%enclosingGraphic;), (%termOrNonTerm;)*) >
+<!ATTLIST partition
+    %standardAttribs;
+    %labelAttribs;
+>
+
+<!--- the "compartment" relationship specifies that a group of marks belongs to a particular
+    region in a partitioned graphic. This relationship was constructed, in particular, for
+    the specification of hand-drawn UML diagrams.
+    -->
+<!ELEMENT compartment ((%enclosingGraphic;), (%termOrNonTerm;)*) >
+<!ATTLIST compartment
+    %standardAttribs;
+    %partitionIndAttribs;
+>
